@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF智能问答功能 - 产品介绍</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            color: #333;
+            background-color: #f8fafc;
+        }
+        .slide {
+            padding: 3rem 4rem;
+            margin-bottom: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+        .slide-title {
+            color: #0066cc;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #e6f0ff;
+            padding-bottom: 0.5rem;
+        }
+        .feature-card {
+            border-left: 4px solid #0066cc;
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateX(5px);
+        }
+        .process-step {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        .process-step:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #0066cc;
+        }
+        .process-step:after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 20px;
+            width: 2px;
+            height: calc(100% - 8px);
+            background-color: #e6f0ff;
+        }
+        .process-step:last-child:after {
+            display: none;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #0066cc 0%, #1a8cff 100%);
+            color: white;
+        }
+        .error-card {
+            border-left: 4px solid #ff4757;
+            background-color: #fff8f8;
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.75rem;
+        }
+    </style>
+</head>
+<body class="p-6 max-w-6xl mx-auto">
+    <!-- Title Slide -->
+    <div class="slide hero-gradient">
+        <div class="flex items-center justify-between">
+            <div>
+                <h1 class="text-4xl font-bold mb-4">PDF智能问答功能</h1>
+                <p class="text-xl opacity-90">产品需求文档演示</p>
+            </div>
+            <div class="text-8xl opacity-50">
+                <i class="fas fa-file-pdf mr-4"></i>
+                <i class="fas fa-robot"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background & Goals Slide -->
+    <div class="slide">
+        <h2 class="slide-title text-2xl">1. 背景与目标</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+                <div class="feature-card">
+                    <h3 class="font-bold mb-2">问题描述</h3>
+                    <p>传统 PDF 工具无法基于选中文本提供智能解释或对话支持，用户需手动复制粘贴并切换上下文。</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="font-bold mb-2">目标</h3>
+                    <p>构建一个支持选中 PDF 内容后即时与 AI 对话的功能</p>
+                    <div class="flex flex-wrap mt-2">
+                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm mr-2 mb-2">响应速度 < 5s</span>
+                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm mr-2 mb-2">正确率 > 95%</span>
+                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm mr-2 mb-2">安全合规</span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="font-bold mb-3">需求来源</h3>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                            <i class="fas fa-users text-blue-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">用户反馈</h4>
+                            <p class="text-sm text-gray-600">不懂专业文献、不便整理笔记</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                            <i class="fas fa-chart-line text-blue-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">技术趋势</h4>
+                            <p class="text-sm text-gray-600">LLM 融合式阅读场景逐渐流行</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                            <i class="fas fa-flask text-blue-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">内部技术研究</h4>
+                            <p class="text-sm text-gray-600">《AI 对话式网站构建综合研究报告》</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Stories Slide -->
+    <div class="slide">
+        <h2 class="slide-title text-2xl">2. 用户故事</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white p-5 border border-gray-200 rounded-lg hover:shadow-md transition-shadow duration-300">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                        <i class="fas fa-microscope text-blue-500"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg">研究人员</h3>
+                </div>
+                <div class="pl-16">
+                    <p class="mb-2"><span class="font-bold">I want to</span> 选中 PDF 中的复杂段落获得 AI 解读</p>
+                    <p><span class="font-bold">So that</span> 我能快速理解其含义</p>
+                </div>
+            </div>
+            
+            <div class="bg-white p-5 border border-gray-200 rounded-lg hover:shadow-md transition-shadow duration-300">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                        <i class="fas fa-tasks text-blue-500"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg">产品经理</h3>
+                </div>
+                <div class="pl-16">
+                    <p class="mb-2"><span class="font-bold">I want to</span> 对整页内容进行摘要/生成导图</p>
+                    <p><span class="font-bold">So that</span> 我能快速把握整体结构</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Functional Description - Normal Process -->
+    <div class="slide">
+        <h2 class="slide-title text-2xl">3. 功能描述 - 正常流程</h2>
+        <div class="relative">
+            <div class="process-step">
+                <h3 class="font-bold mb-1">步骤 1</h3>
+                <p>用户打开 PDF，浏览页面</p>
+            </div>
+            <div class="process-step">
+                <h3 class="font-bold mb-1">步骤 2</h3>
+                <p>选中一段文本</p>
+            </div>
+            <div class="process-step">
+                <h3 class="font-bold mb-1">步骤 3</h3>
+                <p>系统显示浮动菜单：AI 聊天 / 翻译 / 解释</p>
+                <div class="mt-2 bg-gray-100 p-3 rounded inline-block shadow-sm">
+                    <span class="px-2 py-1 bg-blue-500 text-white rounded-sm cursor-pointer mr-2">AI 聊天</span>
+                    <span class="px-2 py-1 bg-gray-200 text-gray-700 rounded-sm cursor-pointer mr-2">翻译</span>
+                    <span class="px-2 py-1 bg-gray-200 text-gray-700 rounded-sm cursor-pointer">解释</span>
+                </div>
+            </div>
+            <div class="process-step">
+                <h3 class="font-bold mb-1">步骤 4</h3>
+                <p>用户点击菜单项，系统准备上下文，构造 Prompt</p>
+            </div>
+            <div class="process-step">
+                <h3 class="font-bold mb-1">步骤 5</h3>
+                <p>调用 LLM API（前端 fetch + 用户 API key）</p>
+            </div>
+            <div class="process-step">
+                <h3 class="font-bold mb-1">步骤 6</h3>
+                <p>实时返回响应内容，展示在右侧面板中</p>
+            </div>
+        </div>
+        <div class="mt-6">
+            <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                <div class="flex">
+                    <div class="w-2/3 p-4 bg-white rounded border border-gray-300 mr-4">
+                        <div class="bg-gray-200 h-6 w-full mb-3 rounded"></div>
+                        <div class="bg-blue-100 p-2 rounded mb-2">
+                            <p class="text-sm font-medium">选中文本内容</p>
+                        </div>
+                        <div class="bg-gray-100 h-4 w-full mb-2 rounded"></div>
+                        <div class="bg-gray-100 h-4 w-11/12 mb-2 rounded"></div>
+                        <div class="bg-gray-100 h-4 w-10/12 rounded"></div>
+                    </div>
+                    <div class="w-1/3 p-4 bg-white rounded border border-blue-300">
+                        <div class="bg-blue-500 text-white py-1 px-2 rounded text-sm mb-3">AI 回复</div>
+                        <div class="bg-gray-100 h-4 w-full mb-2 rounded"></div>
+                        <div class="bg-gray-100 h-4 w-11/12 mb-2 rounded"></div>
+                        <div class="bg-gray-100 h-4 w-full mb-2 rounded"></div>
+                        <div class="bg-gray-100 h-4 w-10/12 rounded"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Functional Description - Exception Process -->
+    <div class="slide">
+        <h2 class="slide-title text-2xl">3.2 功能描述 - 异常流程</h2>
+        <div class="grid gap-4">
+            <div class="error-card">
+                <h3 class="font-bold mb-2">[ERR-001] 选中文本为空或过短</h3>
+                <div class="flex items-center">
+                    <div class="bg-white border border-gray-200 rounded p-3 mr-4 flex-shrink-0">
+                        <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>
+                        <span class="text-sm">请选择更完整的文本片段</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">当用户选择空白或文本长度不足以进行有效分析时显示此提示</p>
+                </div>
+            </div>
+            
+            <div class="error-card">
+                <h3 class="font-bold mb-2">[ERR-002] API 请求失败</h3>
+                <div class="flex items-center">
+                    <div class="bg-white border border-gray-200 rounded p-3 mr-4 flex-shrink-0">
+                        <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>
+                        <span class="text-sm">AI 服务暂时不可用，请稍后重试</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">当 API 请求超时或返回错误状态码时显示此提示</p>
+                </div>
+            </div>
+            
+            <div class="error-card">
+                <h3 class="font-bold mb-2">[ERR-003] Token 超限</h3>
+                <div class="flex items-center">
+                    <div class="bg-white border border-gray-200 rounded p-3 mr-4 flex-shrink-0">
+                        <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>
+                        <span class="text-sm">选中文本过长，已自动截断</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">当选中文本长度超过 API token 限制时显示此提示</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Functional Description - UI Interactions -->
+    <div class="slide">
+        <h2 class="slide-title text-2xl">3.3 功能描述 - 界面交互</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+                <h3 class="font-bold mb-3">核心组件</h3>
+                <ul class="space-y-3">
+                    <li class="bg-blue-50 p-3 rounded">
+                        <div class="flex items-center">
+                            <i class="fas fa-file-pdf text-blue-500 mr-3"></i>
+                            <div>
+                                <p class="font-semibold">@tato30/vue-pdf</p>
+                                <p class="text-sm text-gray-600">PDF 渲染和交互组件</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="bg-blue-50 p-3 rounded">
+                        <div class="flex items-center">
+                            <i class="fas fa-ellipsis-h text-blue-500 mr-3"></i>
+                            <div>
+                                <p class="font-semibold">floating-vue 悬浮菜单</p>
+                                <p class="text-sm text-gray-600">文本选中后的上下文菜单</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="bg-blue-50 p-3 rounded">
+                        <div class="flex items-center">
+                            <i class="fas fa-robot text-blue-500 mr-3"></i>
+                            <div>
+                                <p class="font-semibold">右侧 AI 面板</p>
+                                <p class="text-sm text-gray-600">展示 AI 回复内容</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-bold mb-3">交互定位实现</h3>
+                <div class="bg-gray-800 text-green-400 p-4 rounded font-mono text-sm">
+                    <p>// 上下文菜单定位</p>
+                    <p>const selection = window.getSelection();</p>
+                    <p>const range = selection.getRangeAt(0);</p>
+                    <p>const rect = range.getBoundingClientRect();</p>
+                    <br>
+                    <p>// 显示菜单在选区右上方</p>
+                    <p>showMenu({</p>
+                    <p>&nbsp;&nbsp;x: rect.right,</p>
+                    <p>&nbsp;&nbsp;y: rect.top</p>
+                    <p>});</p>
+                </div>
+            </div>
+        </div>
+        <div class="mt-6 bg-gray-50 p-4 rounded-lg border border-gray-200">
+            <h3 class="font-bold mb-3 text-center">交互流程示意图</h3>
+            <div class="flex justify-center">
+                <div class="flex flex-col items-center">
+                    <div class="bg-white p-3 border border-gray-300 rounded w-64 text-center mb-3">
+                        <p>用户选中文本</p>
+                    </div>
+                    <i class="fas fa-arrow-down text-blue-500 mb-3"></i>
+                    <div class="bg-white p-3 border border-gray-300 rounded w-64 text-center mb-3">
+                        <p>弹出上下文菜单</p>
+                    </div>
+                    <i class="fas fa-arrow-down text-blue-500 mb-3"></i>
+                    <div class="bg-white p-3 border border-gray-300 rounded w-64 text-center mb-3">
+                        <p>调用 AI 分析</p>
+                    </div>
+                    <i class="fas fa-arrow-down text-blue-500 mb-3"></i>
+                    <div class="bg-white p-3 border border-blue-300 rounded w-64 text-center">
+                        <p>右侧面板展示回复</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Data -->
+    <div class="slide">
+        <h2 class="slide-title text-2xl">4. 数据</h2>
+        <div class="bg-gray-50 p-5 rounded-lg">
+            <div class="flex items-start">
+                <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4 mt-1">
+                    <i class="fas fa-database text-blue-500"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-2">数据处理与存储</h3>
+                    <p class="mb-4">本功能主要处理用户选择的文本数据，将其发送至LLM API进行处理并返回分析结果。所有数据处理均在前端完成，不涉及后端存储。</p>
+                    
+                    <div class="bg-white p-4 rounded border border-gray-200 mb-4">
+                        <h4 class="font-semibold mb-2">数据流向</h4>
+                        <div class="flex items-center justify-between text-sm text-gray-600">
+                            <div class="text-center">
+                                <div class="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-2">
+                                    <i class="fas fa-file-pdf text-gray-500 text-xl"></i>
+                                </div>
+                                <p>PDF文档</p>
+                            </div>
+                            <i class="fas fa-arrow-right text-blue-400"></i>
+                            <div class="text-center">
+                                <div class="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-2">
+                                    <i class="fas fa-font text-gray-500 text-xl"></i>
+                                </div>
+                                <p>选中文本</p>
+                            </div>
+                            <i class="fas fa-arrow-right text-blue-400"></i>
+                            <div class="text-center">
+                                <div class="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-2">
+                                    <i class="fas fa-cloud text-gray-500 text-xl"></i>
+                                </div>
+                                <p>LLM API</p>
+                            </div>
+                            <i class="fas fa-arrow-right text-blue-400"></i>
+                            <div class="text-center">
+                                <div class="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-2">
+                                    <i class="fas fa-comment-dots text-gray-500 text-xl"></i>
+                                </div>
+                                <p>AI回复</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-4 rounded border border-blue-200">
+                        <h4 class="font-semibold mb-2 flex items-center">
+                            <i class="fas fa-shield-alt text-blue-500 mr-2"></i>
+                            <span>数据安全</span>
+                        </h4>
+                        <ul class="list-disc pl-5 space-y-1 text-sm">
+                            <li>用户数据不在本地存储，仅在会话期间临时处理</li>
+                            <li>LLM API 调用使用用户自己的 API Key，保障数据安全</li>
+                            <li>前端直接调用 API，避免第三方服务器中转处理</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conclusion/Summary -->
+    <div class="slide hero-gradient">
+        <h2 class="text-2xl font-bold mb-6 border-b border-white border-opacity-30 pb-2">总结与展望</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white bg-opacity-10 p-4 rounded">
+                <div class="text-3xl mb-3">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h3 class="font-bold mb-2">产品价值</h3>
+                <ul class="space-y-1 text-sm">
+                    <li>• 提高阅读效率</li>
+                    <li>• 降低专业内容理解门槛</li>
+                    <li>• 增强用户文档处理体验</li>
+                </ul>
+            </div>
+            <div class="bg-white bg-opacity-10 p-4 rounded">
+                <div class="text-3xl mb-3">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <h3 class="font-bold mb-2">实现重点</h3>
+                <ul class="space-y-1 text-sm">
+                    <li>• 前端文本选择交互</li>
+                    <li>• LLM API 集成</li>
+                    <li>• 响应式 UI 设计</li>
+                </ul>
+            </div>
+            <div class="bg-white bg-opacity-10 p-4 rounded">
+                <div class="text-3xl mb-3">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3 class="font-bold mb-2">未来拓展</h3>
+                <ul class="space-y-1 text-sm">
+                    <li>• 图表识别与解释</li>
+                    <li>• 多文档交叉引用</li>
+                    <li>• 个性化学习提示</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-8 text-center">
+            <h2 class="text-2xl font-bold">PDF智能问答功能</h2>
+            <p class="opacity-70 mt-2">改变阅读体验的智能解决方案</p>
+        </div>
+    </div>
+
+    <script>
+        // Simple slide animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            slides.forEach((slide, index) => {
+                setTimeout(() => {
+                    slide.style.opacity = '0';
+                    slide.style.transform = 'translateY(20px)';
+                    slide.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    
+                    setTimeout(() => {
+                        slide.style.opacity = '1';
+                        slide.style.transform = 'translateY(0)';
+                    }, 50);
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>
